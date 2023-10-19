@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/googleLocationSearch/static/css/main.073c9b0a.css",
+    "main.js": "/googleLocationSearch/static/js/main.54277093.js",
+    "index.html": "/googleLocationSearch/index.html",
+    "main.073c9b0a.css.map": "/googleLocationSearch/static/css/main.073c9b0a.css.map",
+    "main.54277093.js.map": "/googleLocationSearch/static/js/main.54277093.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.54277093.js"
+  ]
+}
