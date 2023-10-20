@@ -28,7 +28,7 @@ const LocationAutocomplete: React.FC = () => {
   )
   const [input, setInput] = useState(selectedLocation?.city_name ?? 'Sydney')
   // get options on every render:
-  // when the component is mounted, and when two states change
+  // when the component is mounted, and when input state change
   const { options, isLoaded } = usePlaceAutocomplete(input)
 
   // When user allow location share (or set selected location), change input value
