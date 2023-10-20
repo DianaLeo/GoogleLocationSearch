@@ -1,6 +1,6 @@
 .nav {
     width: 100vw;
-    background-color: rgb(26, 31, 39);
+    background-color: var(--dark);
     box-shadow: 0 0 15px black;
 }
 
@@ -20,15 +20,15 @@
     font-size: 25px;
     transition: 0.2s;
     text-decoration: none;
-    color: rgb(151, 174, 209);
+    color: var(--lighter);
 }
 
 li:hover {
-    background-color: rgb(40, 52, 70);
+    background-color: var(--medium);
 }
 
 .link:active {
-    background-color: rgb(34, 42, 54);
+    background-color: var(--dark);
     box-shadow: inset 1px 1px 4px black;
 }
 
@@ -36,12 +36,19 @@ li:hover {
     position: absolute;
     width: 55px;
     height: 55px;
-    background-color: rgb(36, 42, 53);
+    background-color: var(--dark);
     border-radius: 5px;
     padding: 10px;
     color: white;
     display: none;
     z-index: 2;
+}
+
+.autocompleteContainer{
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 60px;
 }
 
 @media (max-width:700px) {
