@@ -11,7 +11,7 @@
 
 ## Logic Diagram
 
-![logic diagram]('./public/logicDiagram.jpg)
+![logic diagram](./build/logicDiagram.jpg)
 
 ### User Interactions
 
