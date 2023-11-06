@@ -10,7 +10,7 @@ import { GoogleApiLoaderProvider } from './context/googleApiLoader';
 
 function App() {
   return (
-    <BrowserRouter basename='/googleLocationSearch'>
+    <BrowserRouter basename='/GoogleLocationSearch'>
       <Provider store={store}>
         <GoogleApiLoaderProvider>
           <Routes>
@@ -19,9 +19,7 @@ function App() {
             </Route>
           </Routes>
         </GoogleApiLoaderProvider>
-
       </Provider>
-
     </BrowserRouter>
   );
 }
