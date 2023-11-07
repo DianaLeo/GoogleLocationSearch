@@ -8,7 +8,7 @@ const INITIAL_STATE: GoogleApiLoaderState = {
   loadError: undefined,
 }
 
-const GOOGLEMAP_API_KEY = 'AIzaSyBnxWUArZubdjx7bZNr6dy2SKow7-03z0Y'
+const GOOGLEMAP_API_KEY = import.meta.env.GOOGLE_API_KEY
 
 const LIBRARIES: Libraries = ['places', 'maps']
 
