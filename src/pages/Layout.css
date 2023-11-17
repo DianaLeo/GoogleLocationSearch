@@ -1,40 +1,42 @@
 .nav {
-    width: 100vw;
-    background-color: var(--dark);
-    box-shadow: 0 0 15px black;
+  width: 100vw;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5), 0 0 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 1;
 }
 
 .navUl {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+  background-color: var(--dark);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .link {
-    display: block;
-    padding: 40px;
-    width: 100%;
-    height: 100%;
-    font-size: 25px;
-    transition: 0.2s;
-    text-decoration: none;
-    color: var(--lighter);
+  display: block;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  transition: 0.2s;
+  text-decoration: none;
+  color: var(--lighter);
 }
 
 li:hover {
-    background-color: var(--medium);
+  background-color: var(--medium);
 }
 
 .link:active {
-    background-color: var(--dark);
-    box-shadow: inset 1px 1px 4px black;
+  background-color: var(--dark);
+  box-shadow: inset 1px 1px 4px black;
 }
 
-.navBtn {
+/* .navBtn {
     position: absolute;
-    width: 55px;
+    width: 5px;
     height: 55px;
     background-color: var(--dark);
     border-radius: 5px;
@@ -42,44 +44,37 @@ li:hover {
     color: white;
     display: none;
     z-index: 2;
-}
+} */
 
-.autocompleteContainer{
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 60px;
-}
-
-@media (max-width:700px) {
-    .nav{
+@media (max-width: 700px) {
+  /* .nav{
         position: absolute;
         translate: 0 -100%;
         box-shadow: 0 0 0 1000px transparent;
         transition: 0.5s;
         z-index: 1;        
-    }
-    .navUl {
-        flex-direction: column;
-        justify-content: center;
-        padding: 30px 0;
-    }
+    } */
+  .navUl {
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0;
+  }
 
-    .nav.show {
-        translate: 0 0;
-        box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.6), 0 0 15px black;
-    }
+  .nav.show {
+    translate: 0 0;
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.6), 0 0 15px black;
+  }
 
-    .navUl li {
-        width: 100%;
-        text-align: center;
-    }
+  .navUl li {
+    width: 100%;
+    text-align: center;
+  }
 
-    .link {
-        padding: 20px 0;
-    }
+  .link {
+    padding: 20px 0;
+  }
 
-    .navBtn {
+  /* .navBtn {
         display: block;
-    }
+    } */
 }

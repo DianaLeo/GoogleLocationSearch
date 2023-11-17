@@ -1,54 +1,42 @@
-import { Autocomplete, TextField } from '@mui/material'
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
-import { styles } from './location-autocomplete-list-body-styles'
-import { SyntheticEvent } from 'react'
-import LocationAutocompleteListOption from '../location-autocomplete-list-option'
-import { PlaceType } from '../location-autocomplete'
+import { Autocomplete, TextField } from "@mui/material";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import { autocompleteBodystyles } from "./LocationAutocompleteBodyStyles";
+import { SyntheticEvent } from "react";
+import LocationAutocompleteOption from "../LocationAutocompleteOption";
+import { PlaceType } from "../LocationAutocomplete";
 
 type Props = {
-  locationValue: PlaceType | null
-  options: readonly PlaceType[]
+  inputValue: string;
+  locationValue: PlaceType | null;
+  options: readonly PlaceType[];
   onChangeHandler: (
     event: SyntheticEvent<Element, Event>,
-    newValue: PlaceType | null
-  ) => void
+    newValue: string | PlaceType | null
+  ) => void;
   onInputChangeHandler: (
     event: SyntheticEvent<Element, Event>,
     newInputValue: string
-  ) => void
-}
+  ) => void;
+};
 
-const LocationAutocompleteListBody = ({
+const LocationAutocompleteBody = ({
+  inputValue,
   locationValue,
   options,
   onChangeHandler,
   onInputChangeHandler,
 }: Props) => {
-
   return (
     <>
       <Autocomplete
         id="google-map-demo"
         fullWidth
         blurOnSelect
-        // Customize dropdown position
-        // PopperComponent={(props: PopperProps) => {
-        //   const anchorEl = anchor.current
-        //   return (
-        //     <Popper
-        //       {...props}
-        //       anchorEl={anchorEl}
-        //       style={{
-        //         width: anchorEl?.clientWidth,
-        //       }}
-        //       placement="bottom"
-        //     />
-        //   )
-        // }}
+        freeSolo
         disablePortal
-        sx={styles.autocomplete}
+        sx={autocompleteBodystyles.autocomplete}
         getOptionLabel={(option) =>
-          typeof option === 'string'
+          typeof option === "string"
             ? option
             : option.structured_formatting.main_text
         }
@@ -57,6 +45,7 @@ const LocationAutocompleteListBody = ({
           value.structured_formatting.main_text
         }
         options={options}
+        inputValue={inputValue}
         value={locationValue}
         noOptionsText="No locations"
         onChange={onChangeHandler}
@@ -65,22 +54,24 @@ const LocationAutocompleteListBody = ({
           <TextField
             {...params}
             placeholder="where are you going"
-            sx={styles.input}
+            sx={autocompleteBodystyles.input}
             InputProps={{
               ...params.InputProps,
               endAdornment: null,
-              startAdornment: <LocationOnOutlinedIcon sx={styles.icon} />,
+              startAdornment: (
+                <LocationOnOutlinedIcon sx={autocompleteBodystyles.icon} />
+              ),
             }}
           />
         )}
         ListboxProps={{
           style: {
-            width: '100%',
+            width: "100%",
             maxHeight: 600,
           },
         }}
         renderOption={(props, option) => (
-          <LocationAutocompleteListOption
+          <LocationAutocompleteOption
             key={option.place_id}
             props={props}
             option={option}
@@ -88,7 +79,7 @@ const LocationAutocompleteListBody = ({
         )}
       />
     </>
-  )
-}
+  );
+};
 
-export default LocationAutocompleteListBody
+export default LocationAutocompleteBody;

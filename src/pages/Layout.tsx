@@ -1,25 +1,32 @@
 import { FunctionComponent, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import './Layout.css'
-//import { AiOutlineMenu } from "react-icons/ai";
+import "./Layout.css";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Layout: FunctionComponent = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   return (
     <>
-      {/* <AiOutlineMenu className="navBtn" onClick={() => { setShow(s => !s) }} /> */}
+      {/* <MenuIcon className="navBtn" onClick={() => { setShow(s => !s) }} /> */}
       <nav className={`nav ${show ? "show" : ""}`}>
-        <ul className="navUl" >
+        <ul className="navUl">
           <li>
-            <Link className="link" to="/" onClick={() => { setShow(s => !s) }}>Home</Link>
+            <Link
+              className="link"
+              to="/"
+              onClick={() => {
+                setShow(s => !s);
+              }}
+            >
+              Home
+            </Link>
           </li>
         </ul>
       </nav>
-
       <Outlet />
     </>
-  )
+  );
 };
 
 export default Layout;

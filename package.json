@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "redux-persist": "^6.0.0",
     "typescript": "^4.9.5",
+    "use-places-autocomplete": "^4.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -54,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/google.maps": "^3.54.8",
     "@types/lodash": "^4.14.200",
     "gh-pages": "^6.0.0"
   }

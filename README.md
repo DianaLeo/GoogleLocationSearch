@@ -38,7 +38,7 @@ As long as `['places','maps']` is included, this `isLoaded` variable is accessib
 ### usePlaceAutocomplete hook
 
 The Google Places related logic is integrated into a **customized hook** `usePlaceAutocomplete`.
-There is also a `use-places-autocomplete` package. But I prefer a customized one, to get it more controlled.
+There is also a `use-places-autocomplete` package. But I prefer a customized one, to practice more.
 
 This hook takes user input as the parameter, and returns location predictions, which is also dropdown menu options.
 Within this hook, `isLoaded` is obtained from the global context first. On mounting, the package will be loaded, and it happens only once.
@@ -47,23 +47,17 @@ And then this service provides a `getPredictions` function to return locaiton pr
 
 The function calling is **debounced** with a 400ms delay. And the debounced function is cached with `useCallback`.
 
-### Autocomplete
+### Autocomplete and Redux
 
 Regarding UI and controls, Autocomplete component is applied.
 It has two states: `inputValue` and `locationValue`.
 InputValue is what user input, and locationValue is what option user selected.
 
-The initial value of these states are set with `selectedLocation`. For a first-time user, there is no selectedLocation.
-If user choose to allow location sharing, selectedLocation becomes user current location. If not, or before user has chosen anything, then default value `Sydney` is applied to both input and location value. 
 InputValue is just a string. It is for getting new location predictions as options. Options are then mapped to dropdown list items.
 
-Currently, when user select one option, locationValue is set to that option, and is converted to type `LocationProp`, with latitude and longitude added, and then set to redux store immediatly. 
+The initial value of these states are set with `searchLocation` slice from redux store. For a first-time user, there is no `searchLocation`, default value `Sydney` is applied.
+If user chooses to allow location sharing, `searchLocation` becomes user current location. If user has chosen any place from the dropdown before he/she allow location sharing, then clicking allow will only set `userLocation` slice, `searchLocation` will be the same as what the user has chosen. 
 
-The diagram shows a more ideal idea, where all the location data type converting jobs are processed within redux, in which way the Autocomplete component get neater and cleaner. 
+Currently, when user select one option, locationValue is set to that option, and is set to redux store immediately. Inside redux slice, location type is converted from google.prediction to a customized type `LocationProp`, with latitude and longitude added. 
 
-### Redux
-
-Currently, the data type in Redux is `LocationProp`, which only has address name, latitude and longitude, which is designed for displaying maps.
-
-It will be redesigned to the same type what Google Places API returns, which is a more complecated object.
-And `getLocationById` and `getAddressByLocation` functions will be integrated here. 
+All the location data type converting jobs are processed within redux, where `getLocationById` and `getNameByLocation` functions are integrated here. In this way the Autocomplete component get neater and cleaner. 
