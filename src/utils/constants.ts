@@ -10,7 +10,7 @@ export const defaultLocation: LocationProp = {
   latitude: -33.865143,
   longitude: 151.2099,
   view: [],
-}
+};
 
 export const defaultGooglePlace: PlaceType = {
   description: "",

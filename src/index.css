@@ -4,16 +4,16 @@
   margin: 0;
 }
 
-:root{
-  --dark:rgb(108, 102, 109);
-  --medium:rgb(80, 78, 80);
-  --light:rgb(118, 63, 121);
-  --lighter:rgb(245, 233, 239);
+:root {
+  --dark: rgb(108, 102, 109);
+  --medium: rgb(80, 78, 80);
+  --light: rgb(118, 63, 121);
+  --lighter: rgb(245, 233, 239);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

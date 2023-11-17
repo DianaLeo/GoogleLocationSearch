@@ -7,7 +7,13 @@ const Instructions = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <Box sx={isOpen ? styles.open : { ...styles.open, transform:"translate(-50%,80%)"}}>
+    <Box
+      sx={
+        isOpen
+          ? styles.open
+          : { ...styles.open, transform: "translate(-50%,80%)" }
+      }
+    >
       <Box
         sx={styles.icon}
         onClick={() => {
@@ -35,7 +41,7 @@ const styles: Record<string, SxProps<Theme>> = {
   open: {
     position: "absolute",
     left: "50%",
-    transform:"translateX(-50%)",
+    transform: "translateX(-50%)",
     bottom: 0,
     padding: "20px 30px 30px",
     backgroundColor: "white",
@@ -44,7 +50,7 @@ const styles: Record<string, SxProps<Theme>> = {
     gap: "20px",
     transition: "0.3s",
     borderRadius: "16px 16px 0 0",
-    boxShadow:"0 0 10px rgba(0,0,0,0.15),0 0 3px rgba(0,0,0,0.25)",
+    boxShadow: "0 0 10px rgba(0,0,0,0.15),0 0 3px rgba(0,0,0,0.25)",
   },
   icon: {
     cursor: "pointer",

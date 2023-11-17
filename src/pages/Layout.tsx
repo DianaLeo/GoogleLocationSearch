@@ -16,7 +16,7 @@ const Layout: FunctionComponent = () => {
               className="link"
               to="/"
               onClick={() => {
-                setShow(s => !s);
+                setShow((s) => !s);
               }}
             >
               Home

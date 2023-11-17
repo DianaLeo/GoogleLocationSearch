@@ -1,11 +1,5 @@
 import { debounce } from "lodash";
-import {
-  useCallback,
-  useEffect,
-  useContext,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useContext, useRef, useState } from "react";
 import { PlaceType } from "../components/location-autocomplete/LocationAutocomplete";
 import { GoogleApiLoaderContext } from "../context/googleApiLoader";
 

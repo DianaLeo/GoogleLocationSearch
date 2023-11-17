@@ -1,1 +1,1 @@
-export { default } from './LocationAutocompleteOption'
+export { default } from "./LocationAutocompleteOption";

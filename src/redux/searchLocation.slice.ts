@@ -10,12 +10,12 @@ import { getLatLngById, getNameByLatLng } from "../utils/dataTypeTransfer";
 
 export const setSearchLocationById = createAsyncThunk(
   "searchLocation/getLatLngById",
-  getLatLngById,
+  getLatLngById
 );
 
 export const setSearchLocationByLatLng = createAsyncThunk(
   "searchLocation/getNameByLatLng",
-  getNameByLatLng,
+  getNameByLatLng
 );
 
 const searchLocationSlice = createSlice<
@@ -46,7 +46,7 @@ const searchLocationSlice = createSlice<
         state.status = "succeeded";
         // If user has already searched a location (state.value is not undefined),
         // then allowing location share will do nothing to searchLocation
-        if (!state.value?.city_name){
+        if (!state.value?.city_name) {
           state.value = action.payload;
         }
       })
@@ -62,7 +62,7 @@ export const selectSearchLocation = createSelector(
   (state: RootState) => state.searchLocation,
   (searchLocation) => searchLocation.value
 );
-// export const selectSearchLocation = 
+// export const selectSearchLocation =
 //   (state: RootState) => state.searchLocation.value
 //reducer
 export default searchLocationSlice.reducer;
