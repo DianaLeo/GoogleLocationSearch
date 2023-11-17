@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/GoogleLocationSearch/static/css/main.402deb2b.css",
-    "main.js": "/GoogleLocationSearch/static/js/main.2470280d.js",
+    "main.css": "/GoogleLocationSearch/static/css/main.e8f63efe.css",
+    "main.js": "/GoogleLocationSearch/static/js/main.323fff19.js",
     "index.html": "/GoogleLocationSearch/index.html",
-    "main.402deb2b.css.map": "/GoogleLocationSearch/static/css/main.402deb2b.css.map",
-    "main.2470280d.js.map": "/GoogleLocationSearch/static/js/main.2470280d.js.map"
+    "main.e8f63efe.css.map": "/GoogleLocationSearch/static/css/main.e8f63efe.css.map",
+    "main.323fff19.js.map": "/GoogleLocationSearch/static/js/main.323fff19.js.map"
   },
   "entrypoints": [
-    "static/css/main.402deb2b.css",
-    "static/js/main.2470280d.js"
+    "static/css/main.e8f63efe.css",
+    "static/js/main.323fff19.js"
   ]
 }
